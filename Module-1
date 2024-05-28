@@ -10,3 +10,48 @@ From Artists;
 Retrieve all data from the invoices table. What is the billing address for customer 31?
 Select *
 From Invoices Where CustomerID=31;
+
+Return the playlist id, and name from the playlists table. How many playlists are there? Which would you classify is your favorite from this list?
+Select Playlistid,
+Name
+From Playlists;
+Select Count(Playlistid) From Playlists;
+Select Name as Favourite From Playlists Where(Name=favourite_playlist1 AND Name=favourite_playlist2 AND...);
+
+Return the Customer Id, Invoice Date, and Billing City from the Invoices table. What city is associated with Customer ID number 42? What was the invoice date for the customer in Santiago?
+SELECT CustomerId, InvoiceDate, BillingCity 
+FROM Invoices;
+SELECT BillingCity 
+FROM Invoices 
+WHERE CustomerId = 42;
+SELECT InvoiceDate 
+FROM Invoices 
+WHERE BillingCity = 'Santiago';
+
+Return the First Name, Last Name, Email, and Phone, from the Customers table. What is the telephone number for Jennifer Peterson?
+Select FirstName, 
+LastName, 
+Email, 
+Phone
+From Customers;
+Select Phone
+From Customers
+Where FirstName='Jennifer';
+
+Return the Track Id, Genre Id, Composer, Unit Price from the Tracks table. How much do these tracks cost?
+Select TrackId, 
+GenreId, 
+Composer, 
+UnitPrice 
+From Tracks;
+Select SUM(UnitPrice) From Tracks Where GenreId=1;
+
+Select all the columns from the Playlist Track table and limit the results to 10 records. How might this information be used?
+Select *
+From Playlist_track 
+Limit 10;
+This information can be used :-
+1. To verify data integrity
+2. For debugging purposes
+3. To create sample data
+4. For performance testing
